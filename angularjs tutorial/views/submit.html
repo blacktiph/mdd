@@ -1,0 +1,68 @@
+<h3>Leaderboard</h3>
+<div>
+	<table class="table">
+		<tr>
+			<th>Name</th>
+			<th>Species</th>
+			<th>Overall Length</th>
+			<th>Fork Length</th>
+			<th>Girth (blacktips only)</th>
+			<th>Estimated Weight</th>
+		</tr>
+		<tr data-ng-repeat="anglerList in anglers | orderBy:orderGirth">
+			<td>{{ anglerList.name }}</td>
+			<td>{{ anglerList.species }}</td>
+			<td>{{ anglerList.overallLength }}</td>
+			<td>{{ anglerList.forkLength }}</td>
+			<!-- (girth*girth*fork)/800 -->
+			<td>{{ anglerList.girth }}</td>
+			<td>{{ anglerList.weight }}</td>
+		</tr>
+	</table>
+</div>
+
+<h3>Submit an entry</h3>
+
+<form>
+	<div class="form-group">
+		<label for="angler">Angler Name</label>
+		<input type="text" class="form-control" id="angler" data-ng-model="newEntry.name">
+	</div>
+
+	<div class="form-group">
+		<label for="species">Species</label>
+		<select data-ng-model="newEntry.species" class="form-control">
+			<option selected="selected">blacknose</option>
+			<option>blacktip</option>
+			<option>bull</option>
+			<option>dusky</option>
+			<option>hammerhead</option>
+			<option>lemon</option>
+			<option>mako</option>
+			<option>sandbar</option>
+			<option>silky</option>
+			<option>spinner</option>
+			<option>sand tiger</option>
+			<option>tiger</option>
+		</select>
+	</div>
+
+	<div class="form-group">
+		<label for="overall">Overall Length Measurement</label>
+		<input data-ng-model="newEntry.overallLength" type="text" class="form-control" id="overall" placeholder="78.6">
+	</div>
+
+	<div class="form-group">
+		<label for="fork">Fork Length Measurement</label>
+		<input data-ng-model="newEntry.forkLength" type="text" class="form-control" id="fork" placeholder="70.6">
+	</div>
+
+	<div class="form-group">
+		<label for="girth">Girth Measurement (Blacktip sharks only)</label>
+		<input data-ng-model="newEntry.girth" type="text" class="form-control" id="girth" placeholder="38.5">
+	</div>
+
+	<button class="btn btn-primary" data-ng-click="addEntry()">Submit</button>
+</form>
+<br />
+<br />
