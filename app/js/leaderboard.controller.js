@@ -44,7 +44,6 @@ function openEntry($scope){
 	};
 }
 
-
 /*========= Fire Base =========*/
 
 // var firebaseData = new Firebase('https://fullsail-blacktiph.firebaseio.com/');
