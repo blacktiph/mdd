@@ -1,58 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<!-- Mobile -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<html lang="en" data-ng-app="btcApp">
+	<head>
+		<!-- Mobile -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		
+		<title></title>
+		<meta charset="utf-8"/>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
 
-	<title>Blacktip Challenge Submission Application</title>
-	<meta charset="utf-8"/>
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
+		<!-- CSS -->
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
+	</head>
+	
+	<body>
 
-	<!-- Google Web Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Tauri|Roboto+Condensed:400,300' rel='stylesheet' type='text/css' />
+		<div class="container">
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="images/favicon.ico" />
+			
+			<!-- Views load through here... -->
+			<div data-ng-view=""></div>
 
-	<!-- CSS -->
-	<link rel="stylesheet" href="css/main.css" />
-	<link rel="stylesheet" href="css/font-awesome.css" />
-	<link href="css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-</head>
+		</div>
 
-<body>
-	<div id="fullscreen-cont">
-	<div id="fullscreen-img" class="img-login">
+		<!-- Angular -->
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.js"></script>
 
-		<div id="main_content">
+		<!-- Firebase -->
+		
+		<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+		<script src="https://cdn.firebase.com/libs/angularfire/0.5.0-rc1/angularfire.js"></script>
+		
 
-			<div class="wrapper">
-				<section>
-
-					<form id="login">
-					    <ul>
-					        <li><h2>Login</h2></li>
-					        <li>Please login using your Facebook username and password</li>
-					        <li><a id="fb_login" href="#">Sign in with Facebook</a></li>		
-					    </ul>
-					</form>
-
-				</section>
-			</div>
-
-		</div><!-- main_content -->
-
-		<footer>
-			<p>Copyright &copy; 2013 - Joshua Jorgensen</p>
-		</footer>
-	</div>
-	</div>
-
-</body>
-
-<!-- ============== Javascript ============== -->
-
-
-
+		<!-- Custom Script -->
+		<script src="js/leaderboard.controller.js"></script>
+	</body>
 </html>
