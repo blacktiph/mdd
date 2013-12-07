@@ -1,0 +1,21 @@
+<h3>Leaderboard</h3>
+<div ng-controller="leaderboard">
+	<table class="table">
+		<tr>
+			<th>Name</th>
+			<th>Species</th>
+			<th>Overall Length</th>
+			<th>Fork Length</th>
+			<th>Girth (blacktips only)</th>
+			<th>Estimated Weight</th>
+		</tr>
+		<tr data-ng-repeat="anglerList in anglers | orderBy:predicate">
+			<td>{{ anglerList.name }}</td>
+			<td>{{ anglerList.species }}</td>
+			<td>{{ anglerList.overallLength }}</td>
+			<td>{{ anglerList.forkLength }}</td>
+			<td>{{ anglerList.girth }}</td>
+			<td>{{ anglerList.weight }}</td>
+		</tr>
+	</table>
+</div>

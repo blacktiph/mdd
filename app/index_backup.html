@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="btcApp">
+	<head>
+		<!-- Mobile -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		
+		<title></title>
+		<meta charset="utf-8"/>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
+	</head>
+	
+	<body>
+		<header>
+		</header>
+
+		<div class="container">
+
+			<!-- Views load through here... -->
+			<div data-ng-view=""></div>
+
+			<!-- <input type="text" ng-model="name" />
+
+			<div data-ng-init="users=[{name:'john smith', city:'Orlando', State:'FL'}, {name:'Bob Turner', city:'Miami', State:'FL'}, {name:'Will Rock', city:'Stuart', State:'FL'}]">
+				<h3>Looping with ng-repeat directives</h3> 
+				<ul>
+					<li data-ng-repeat="userList in users | filter:name | orderBy:'city'">{{ userList.name | uppercase}} - {{ userList.city | lowercase }}</li>
+				</ul>
+			</div> -->
+
+			<h3>Leaderboard</h3>
+			<!-- <div ng-init="anglers=[{name:'John Smith', species:'blacktip', overallLength:78.89, forkLength:67.4, girth:42}, {name:'Rob Stuart', species:'blacktip', overallLength:165, forkLength:62, girth:28}, {name:'Adam Larson', species:'blacktip', overallLength:109, forkLength:64, girth:35}]"> -->
+			<div ng-controller="leaderboard">
+				<!-- <ul>
+					<li ng-repeat="anglerList in anglers | orderBy:predicate">NAME: {{ anglerList.name | lowercase}}, SPECIES: {{ anglerList.species }}, OVERALL LENGTH: {{anglerList.overallLength}}</li>
+				</ul> -->
+				<table class="table">
+					<tr>
+						<th>Name</th>
+						<th>Species</th>
+						<th>Overall Length</th>
+						<th>Fork Length</th>
+						<th>Girth (blacktips only)</th>
+						<th>Estimated Weight</th>
+					</tr>
+					<tr data-ng-repeat="anglerList in anglers | orderBy:predicate">
+						<td>{{ anglerList.name }}</td>
+						<td>{{ anglerList.species }}</td>
+						<td>{{ anglerList.overallLength }}</td>
+						<td>{{ anglerList.forkLength }}</td>
+						<td>{{ anglerList.girth }}</td>
+						<td>{{ anglerList.weight }}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.js"></script>
+		<script src="js/leaderboard.controller.js"></script>
+	</body>
+</html>
