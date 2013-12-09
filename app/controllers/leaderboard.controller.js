@@ -1,17 +1,9 @@
-btcApp.controller('leaderboard', ['$scope', 'angularFire', function($scope, angularFire) {
+btcApp.controller('leaderboard', ['$scope', '$firebase', function($scope, $firebase) {
 
 	// console.log($scope);
 
 	/*== Firebase ==*/
-	var url = new Firebase('https://btc-fullsail.firebaseio.com/');
-	var data = angularFire(url, $scope, 'anglers', []);
-
-    //Create object to contain the angler entry information
-    $scope.anglers = {};
-
-    data.then(function() {
-    	openEntry($scope);
-    });
+	$scope.anglers = $firebase(new Firebase('https://btc-fullsail.firebaseio.com/'));
 
     $scope.orderByWeight = "-weight";
 
@@ -19,12 +11,10 @@ btcApp.controller('leaderboard', ['$scope', 'angularFire', function($scope, angu
 
 	//Set default value of dropdown list
 	$scope.newEntry.species = "blacknose";
- }]);
 
-function openEntry($scope){
 	$scope.addEntry = function(){
 		$scope.newEntry.weight = ($scope.newEntry.girth * $scope.newEntry.girth * $scope.newEntry.forkLength)/800;
-		$scope.anglers.push($scope.newEntry);
-		// console.log('$scope.newEntry',$scope.newEntry, $scope.anglers);
+		$scope.anglers.$add($scope.newEntry);
 	};
-}
+
+ }]);
