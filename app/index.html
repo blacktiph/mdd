@@ -4,7 +4,7 @@
 	<!-- Mobile -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	
-	<title>Blacktip Challenge</title>
+	<title></title>
 	<meta charset="utf-8"/>
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -16,13 +16,9 @@
 <body>
 
 	<div class="container">
-
-		<!-- database works -->
-
-		<button id="fb_login" class="btn btn-primary">Login with Facebook</button>
 		
 		<!-- Views load through here... -->
-		<div data-ng-view=""></div>
+		<div ng-view=""></div>
 
 	</div>
 
@@ -30,20 +26,18 @@
 
 <!-- ============== Javascript ============== -->
 
-<!-- jQuery -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-
 <!-- Angular -->
 <script src="js/angular.min.js"></script>
 <script src="js/angular-route.js"></script>
 
 <!-- Firebase -->
 <script src="https://cdn.firebase.com/v0/firebase.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/0.2.0/angularfire.min.js"></script>
-<script type="text/javascript" src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/0.5.0-rc1/angularfire.js"></script>
+<script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
 
-<!-- Custom Scripts -->
-<script src="js/angularFireLogin.js"></script>
-<script src="js/leaderboard.controller.js"></script>
+<!-- Controllers -->
+<script src="controllers/route.js"></script>
+<script src="controllers/login.controller.js"></script>
+<script src="controllers/leaderboard.controller.js"></script>
 
 </html>
