@@ -12,5 +12,10 @@ btcApp.config(function($routeProvider){
 			controller: 'leaderboard',
 			templateUrl: 'views/submit.html'
 		});
+	$routeProvider.when('/largestBlacktip',
+		{
+			controller: 'blacktipLeaderBoard',
+			templateUrl: 'views/blacktip.leaderboard.html'
+		});
 	$routeProvider.otherwise({redirectTo: '/'});
 });

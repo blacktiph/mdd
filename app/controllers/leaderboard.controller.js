@@ -5,7 +5,7 @@ btcApp.controller('leaderboard', ['$scope', '$firebase', function($scope, $fireb
 	/*== Firebase ==*/
 	$scope.anglers = $firebase(new Firebase('https://btc-fullsail.firebaseio.com/'));
 
-    $scope.orderByWeight = "-weight";
+	$scope.orderByWeight = "-forkLength";
 
 	$scope.newEntry = {};
 
@@ -18,3 +18,32 @@ btcApp.controller('leaderboard', ['$scope', '$firebase', function($scope, $fireb
 	};
 
  }]);
+
+//Largest Blacktip
+btcApp.controller('blacktipLeaderBoard', ['$scope', '$firebase', function($scope, $firebase) {
+
+	/*== Firebase ==*/
+	$scope.anglers = $firebase(new Firebase('https://btc-fullsail.firebaseio.com/'));
+
+	console.log($scope.anglers);
+
+	$scope.orderByWeight = "-weight";
+
+ }]);
+
+//This will filter and order the objects in the array (weight, overallLength, etc...)
+btcApp.filter('toArray', function () {
+	'use strict';
+
+	return function (obj) {
+		if (!(obj instanceof Object)) {
+			return obj;
+		}
+
+		return Object.keys(obj).filter(function(key) {
+			return key.charAt(0) !== "$";
+		}).map(function (key) {
+			return Object.defineProperty(obj[key], '$key', {__proto__: null, value: key});
+		});
+	}
+});

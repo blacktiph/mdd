@@ -1,5 +1,6 @@
 <br />
 <a href="#/"><button id="fb_logout" class="btn btn-warning">Log Out</button></a>
+<a href="#/largestBlacktip">Largest Blacktip</a>
 
 <h3>Leaderboard</h3>
 <div class="table-responsive">
@@ -12,7 +13,7 @@
 			<th>Girth (blacktips only)</th>
 			<th>Estimated Weight</th>
 		</tr>
-		<tr data-ng-repeat="anglerList in anglers | orderBy:orderByWeight">
+		<tr data-ng-repeat="anglerList in anglers | toArray | orderBy:orderByWeight">
 			<td>{{ anglerList.name }}</td>
 			<td>{{ anglerList.species }}</td>
 			<td>{{ anglerList.overallLength }}</td>
@@ -52,15 +53,15 @@
 	<h4>Measurements</h4>
 
 	<div class="form-group">
-		<input data-ng-model="newEntry.overallLength" type="text" class="form-control" id="overall" placeholder="Overall Length">
+		<input data-ng-model="newEntry.overallLength" type="number" class="form-control" id="overall" placeholder="Overall Length">
 	</div>
 
 	<div class="form-group">
-		<input data-ng-model="newEntry.forkLength" type="text" class="form-control" id="fork" placeholder="Fork Length">
+		<input data-ng-model="newEntry.forkLength" type="number" class="form-control" id="fork" placeholder="Fork Length">
 	</div>
 
 	<div class="form-group">
-		<input data-ng-model="newEntry.girth" type="text" class="form-control" id="girth" placeholder="Girth (Blacktip sharks only)">
+		<input data-ng-model="newEntry.girth" type="number" class="form-control" id="girth" placeholder="Girth (Blacktip sharks only)">
 	</div>
 
 	<button class="btn btn-primary" data-ng-click="addEntry()">Submit</button>
