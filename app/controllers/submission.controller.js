@@ -4,7 +4,7 @@ btcApp.controller('submission', ['$scope', '$firebase', '$location', function($s
 	// console.log($scope);
 
 	/*== Firebase ==*/
-	$scope.anglers = $firebase(new Firebase('https://btc-fullsail.firebaseio.com/entries'));
+	// $scope.anglers = $firebase(new Firebase('https://btc-fullsail.firebaseio.com/entries'));
 
 	$scope.newEntry = {};
 

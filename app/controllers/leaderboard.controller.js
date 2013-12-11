@@ -6,7 +6,7 @@ btcApp.controller('leaderboard', ['$scope', '$firebase', function($scope, $fireb
 	/*== Firebase ==*/
 	// $scope.anglers = $firebase(new Firebase('https://btc-fullsail.firebaseio.com/entries'));
 
-	$scope.orderByLength = "-forkLength";
+	$scope.orderByLength = "-overallLength";
 
 }]);
 
