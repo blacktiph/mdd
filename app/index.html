@@ -11,11 +11,12 @@
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
 
-	<div class="container">
+	<div class="container" ng-controller="CoreCtrl">
 		
 		<!-- Views load through here... -->
 		<div ng-view=""></div>
@@ -37,7 +38,9 @@
 
 <!-- Controllers -->
 <script src="controllers/route.js"></script>
+<script src="controllers/CoreCtrl.js"></script>
 <script src="controllers/login.controller.js"></script>
+<script src="controllers/submission.controller.js"></script>
 <script src="controllers/leaderboard.controller.js"></script>
 
 </html>

@@ -1,21 +1,20 @@
 <br />
 <a href="#/submit">Submit another Entry</a>
 
-<h3>Largest Blacktip Leaderboard</h3>
+<h3>Leaderboard</h3>
 <div class="table-responsive">
 	<table class="table table-condensed table-striped">
 		<tr>
 			<th>Name</th>
-			<th class="removeFromDisplay">Species</th>
+			<th>Species</th>
 			<th>Overall Length</th>
 			<th>Fork Length</th>
-			<th>Girth</th>
+			<th>Girth (blacktips only)</th>
 			<th>Estimated Weight</th>
 		</tr>
-		<input class="removeFromDisplay" type="text" ng-model="search.species" value="blacktip" name="blacktip" />
-		<tr data-ng-repeat="anglerList in anglers | toArray | filter:search | orderBy:orderByWeight">
+		<tr data-ng-repeat="anglerList in anglers | toArray | orderBy:orderByWeight">
 			<td>{{ anglerList.name }}</td>
-			<td class="removeFromDisplay">{{ anglerList.species }}</td>
+			<td>{{ anglerList.species }}</td>
 			<td>{{ anglerList.overallLength }}</td>
 			<td>{{ anglerList.forkLength }}</td>
 			<td>{{ anglerList.girth }}</td>

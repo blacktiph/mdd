@@ -1,12 +1,11 @@
-btcApp.controller("login", ["$scope","$firebase", "$firebaseAuth",
-    function($scope, $firebase, $firebaseAuth) {
+btcApp.controller("login", ["$scope","$firebase", function($scope,$firebase) {
         
-        var firebaseURL = "https://btc-fullsail.firebaseio.com";
+   
 
-        var ref = new Firebase(firebaseURL);
-        $scope.auth = $firebaseAuth(ref);
+    $scope.secure = true;
 
-    }
-]);
+    //If security code matches db, then change $scope.secure to false
+
+}]);
 
 

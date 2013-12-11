@@ -7,10 +7,15 @@
 	</div>
 
 	<div class="panel-body">
-		<p>Please login using Facebook</p>
-		<button class="btn btn-primary" ng-click="auth.$login('facebook')">Login with Facebook</button>
+		<form>
+			<label>Security Code</label>
+			<input type="text" />
+		</form>
 	</div>
-
+	
+	<div class="panel-body">
+		<p>Please login using Facebook</p>
+		<button class="btn btn-primary" ng-disabled="secure" ng-click="auth.$login('facebook')">Login with Facebook</button>
 	</div>
 </div>
 
