@@ -13,6 +13,18 @@ btcApp.controller('submission', ['$scope', '$firebase', '$location', function($s
 
 	// console.log($scope.anglers.length);
 
+
+	/*== Image Uploader ==*/
+	var upload = function($scope, fileReader) {
+		$scope.getFile = function () {
+	        fileReader.readAsDataUrl($scope.file, $scope)
+			
+			.then(function(result) {
+				$scope.imageSrc = result;
+			});
+	    };
+	}
+
 	$scope.addEntry = function(){
 		validate($scope);
 
@@ -20,6 +32,19 @@ btcApp.controller('submission', ['$scope', '$firebase', '$location', function($s
 		$scope.anglers.$add($scope.newEntry);
 
 		$location.path('/leaderboards');
+	};
+
+}]);
+
+btcApp.controller('ngFileSelect', ['$scope', function(){
+
+	return {
+		link: function($scope, el){
+			el.bind("change", function(e){
+				$scope.file = (e.srcElement || e.target).files[0];
+				$scope.getFile();
+			});
+		};
 	};
 
 }]);
