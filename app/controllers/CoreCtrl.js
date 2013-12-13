@@ -9,21 +9,19 @@ btcApp.controller("CoreCtrl", ["$scope","$firebase","$firebaseAuth","$location",
 
 
     var ref = new Firebase($scope.firebaseURL);
-    $scope.auth = $firebaseAuth(ref);
+    $scope.auth = $firebaseAuth(ref, {path:'/'});
 
     $scope.$on("$firebaseAuth:login", function(e,user){
+        console.log('logged in');
     	$location.path('/submit');
     });
-    
-  //   var Watcher = $scope.$watch('AppData', function(){
-		// // $scope.AppData.hick = 'up';
 
+    $scope.$on("$firebaseAuth:logout", function(e,user){
+        console.log('logged out');
+        $location.path('/');
 
-  //   	console.log("Here we go!!", $scope.AppData);
+    });
 
-  //   	Watcher(); // one time run, then clear watch
-
-  //   });
 }]);
 
 

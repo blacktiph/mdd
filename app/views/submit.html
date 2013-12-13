@@ -1,6 +1,6 @@
 <br />
 
-<a href="#/"><button ng-click="auth.$logout()" id="fb_logout" class="btn btn-warning pull-right">Log Out</button></a>
+<button ng-click="auth.$logout()" id="fb_logout" class="btn btn-warning pull-right">Log Out</button>
 <a class="pull-left" href="#/leaderboards"><h4>Check Leaderboards</h4></a>
 
 <div class="clearfix"></div>
@@ -10,18 +10,14 @@
 
 <form name="entryForm" data-ng-submit="addEntry(entryForm)" novalidate>
 
-	<h4>Angler &amp; Team Information</h4>
+	<h4>Angler Information</h4>
 	<div class="form-group">
 		<input type="text" class="form-control" name="anglerName" id="anglerName" data-ng-model="newEntry.name" placeholder="Angler Name" max-length="50" required />
 	</div>
 
 	<div class="form-group">
-		<input type="text" class="form-control" name="teamName" id="teamName" data-ng-model="newEntry.team" placeholder="Team Name" max-length="50" required />
-	</div>
-
-	<div class="form-group">
 		<label for="species">Shark Species</label>
-		<select data-ng-model="newEntry.species" class="form-control">
+		<select data-ng-model="newEntry.species" class="form-control" required>
 			<option>Blacknose</option>
 			<option selected>Blacktip</option>
 			<option>Bull</option>
@@ -57,40 +53,72 @@
 
 	<div class="form-group">
 		<label for="fighting_photo">Angler Fighting Fish</label>
-		<input type="file" id="fighting_photo" ng-file-select="onFileSelect($files)" >
+		<input type="file" id="fighting_photo" ng-file-select="onFileSelect($files)" required />
 	</div>
 	<div class="form-group">
 		<h6>Preview:</h6>
-   		<i ng-hide="imageSrc">No image choosed</i>
-   		<img ng-src="{{ imageSrc }}" width="300px" />
+   		<i ng-hide="imageSrc[0]">No image choosed</i>
+   		<img ng-src="{{ imageSrc[0] }}" width="300px" />
    	</div>
 
-	<div class="form-group">
-		<label for="overall_wide_photo">Overall Length - Wide Photo</label>
-		<input type="file" id="overall_wide_photo" ng-file-select="onFileSelect($files)" >
+	<div ng-show="imageSrc[0]">
+		<div class="form-group">
+			<label for="overall_wide_photo">Overall Length - Wide Photo</label>
+			<input type="file" id="overall_wide_photo" ng-file-select="onFileSelect($files)" required />
+		</div>
+		<div class="form-group">
+			<h6>Preview:</h6>
+	   		<!-- <i ng-hide="imageSrc">No image choosed</i> -->
+	   		<img ng-src="{{ imageSrc[1] }}" width="300px" />
+	   	</div>
 	</div>
 
-	<div class="form-group">
-		<label for="overall_close_photo">Overall Length - Close-up</label>
-		<input type="file" id="overall_close_photo" ng-file-select="onFileSelect($files)" >
+	<div ng-show="imageSrc[1]">
+		<div class="form-group">
+			<label for="overall_close_photo">Overall Length - Close-up</label>
+			<input type="file" id="overall_close_photo" ng-file-select="onFileSelect($files)" required />
+		</div>
+		<div class="form-group">
+			<h6>Preview:</h6>
+	   		<img ng-src="{{ imageSrc[2] }}" width="300px" />
+	   	</div>
 	</div>
 
-	<div class="form-group">
-		<label for="fork_photo">Fork Length</label>
-		<input type="file" id="fork_photo" ng-file-select="onFileSelect($files)" >
+	<div ng-show="imageSrc[2]">
+		<div class="form-group">
+			<label for="fork_photo">Fork Length</label>
+			<input type="file" id="fork_photo" ng-file-select="onFileSelect($files)" required />
+		</div>
+		<div class="form-group">
+			<h6>Preview:</h6>
+	   		<img ng-src="{{ imageSrc[3] }}" width="300px" />
+	   	</div>
+   	</div>
+
+	<div ng-show="imageSrc[3]">
+		<div class="form-group">
+			<label for="girth_photo">Girth (Blacktips only)</label>
+			<input type="file" id="girth_photo" ng-file-select="onFileSelect($files)" required />
+		</div>
+		<div class="form-group">
+			<h6>Preview:</h6>
+	   		<img ng-src="{{ imageSrc[4] }}" width="300px" />
+	   	</div>
 	</div>
 
-	<div class="form-group">
-		<label for="girth_photo">Girth (Blacktips only)</label>
-		<input type="file" id="girth_photo" ng-file-select="onFileSelect($files)" >
-	</div>
-
-	<div class="form-group">
-		<label for="girth_photo">Angler with Shark</label>
-		<input type="file" id="girth_photo" ng-file-select="onFileSelect($files)" >
+	<div ng-show="imageSrc[4]">
+		<div class="form-group">
+			<label for="girth_photo">Angler with Shark</label>
+			<input type="file" id="girth_photo" ng-file-select="onFileSelect($files)" required />
+		</div>
+		<div class="form-group">
+			<h6>Preview:</h6>
+	   		<img ng-src="{{ imageSrc[5] }}" width="300px" />
+	   	</div>
 	</div>
 
 	<button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <br />
 <br />
+<!-- {{ imageSrc }} -->

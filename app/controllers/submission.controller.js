@@ -1,5 +1,5 @@
 //== Submission Page
-btcApp.controller('submission', ['$scope', '$firebase', '$location', function($scope, $firebase, $location) {
+btcApp.controller('submission', ['$scope', '$firebase', '$location', 'fileReader', function($scope, $firebase, $location, fileReader) {
 
 	// console.log($scope);
 
@@ -15,15 +15,27 @@ btcApp.controller('submission', ['$scope', '$firebase', '$location', function($s
 
 
 	/*== Image Uploader ==*/
-	var upload = function($scope, fileReader) {
-		$scope.getFile = function () {
-	        fileReader.readAsDataUrl($scope.file, $scope)
+	$scope.getFile = function () {
+        fileReader.readAsDataUrl($scope.file, $scope)
+		
+		.then(function(result) {
+
+			// var testArray = [result];
+			// console.log('test array -----', typeof testArray);
+
 			
-			.then(function(result) {
-				$scope.imageSrc = result;
-			});
-	    };
-	}
+
+			// test $scope.imageSrc if it is an array / exists
+			if($scope.imageSrc == undefined){
+				// if not, make an array named $scope.imageSrc
+				$scope.imageSrc = [];
+				console.log('it is an object');
+			}
+			
+			//push result into array
+			$scope.imageSrc.push(result);
+		});
+    };
 
 	$scope.addEntry = function(){
 		validate($scope);
@@ -36,7 +48,7 @@ btcApp.controller('submission', ['$scope', '$firebase', '$location', function($s
 
 }]);
 
-btcApp.controller('ngFileSelect', ['$scope', function(){
+btcApp.directive('ngFileSelect', function(){
 
 	return {
 		link: function($scope, el){
@@ -44,10 +56,10 @@ btcApp.controller('ngFileSelect', ['$scope', function(){
 				$scope.file = (e.srcElement || e.target).files[0];
 				$scope.getFile();
 			});
-		};
+		}
 	};
 
-}]);
+});
 
 var validate = function($scope){
 	// console.log('validate form function');

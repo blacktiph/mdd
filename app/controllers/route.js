@@ -5,16 +5,19 @@ btcApp.config(function($routeProvider){
 	$routeProvider.when('/',
 		{
 			controller: 'login',
+			// authRequired: false,
 			templateUrl: 'views/login.html'
 		});
 	$routeProvider.when('/submit',
 		{
 			controller: 'submission',
+			// authRequired: true,
 			templateUrl: 'views/submit.html'
 		});
 	$routeProvider.when('/leaderboards',
 		{
 			controller: 'leaderboard',
+			// authRequired: true,
 			templateUrl: 'views/leaderboards.html'
 		});
 	$routeProvider.otherwise({redirectTo: '/'});

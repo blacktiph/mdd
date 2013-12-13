@@ -45,21 +45,3 @@
 		</table>
 	</div>
 </div>
-
-<div class="leaderboard" ng-controller="mostSharks">
-	<h3>Most Sharks Caught</h3>
-	<div class="table-responsive">
-		<table class="table table-condensed table-striped">
-			<tr>
-				<th>Position</th>
-				<th>Team Name</th>
-				<th>Sharks Caught</th>
-			</tr>
-			<tr data-ng-repeat="anglerList in anglers">
-				<td>{{ $index+1 }}.</td>
-				<td>{{ anglerList.team }}</td>
-				<td>{{  }}</td>
-			</tr>
-		</table>
-	</div>
-</div>
