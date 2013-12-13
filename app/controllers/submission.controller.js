@@ -1,17 +1,10 @@
 //== Submission Page
 btcApp.controller('submission', ['$scope', '$firebase', '$location', 'fileReader', function($scope, $firebase, $location, fileReader) {
 
-	// console.log($scope);
-
-	/*== Firebase ==*/
-	// $scope.anglers = $firebase(new Firebase('https://btc-fullsail.firebaseio.com/entries'));
-
 	$scope.newEntry = {};
 
 	//Set default value of dropdown list
 	$scope.newEntry.species = "Blacktip";
-
-	// console.log($scope.anglers.length);
 
 
 	/*== Image Uploader ==*/
@@ -20,13 +13,9 @@ btcApp.controller('submission', ['$scope', '$firebase', '$location', 'fileReader
 		
 		.then(function(result) {
 
-			// var testArray = [result];
-			// console.log('test array -----', typeof testArray);
-
-			
-
 			// test $scope.imageSrc if it is an array / exists
 			if($scope.imageSrc == undefined){
+				
 				// if not, make an array named $scope.imageSrc
 				$scope.imageSrc = [];
 				console.log('it is an object');

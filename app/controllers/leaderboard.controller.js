@@ -1,11 +1,6 @@
 //== Largest Shark
 btcApp.controller('leaderboard', ['$scope', '$firebase', function($scope, $firebase) {
 
-	// console.log($scope);
-
-	/*== Firebase ==*/
-	// $scope.anglers = $firebase(new Firebase('https://btc-fullsail.firebaseio.com/entries'));
-
 	$scope.orderByLength = "-overallLength";
 
 }]);
@@ -13,26 +8,11 @@ btcApp.controller('leaderboard', ['$scope', '$firebase', function($scope, $fireb
 //== Largest Blacktip
 btcApp.controller('blacktipLeaderBoard', ['$scope', '$firebase', function($scope, $firebase) {
 
-	/*== Firebase ==*/
-	// $scope.anglers = $firebase(new Firebase('https://btc-fullsail.firebaseio.com/entries'));
-
-	// console.log($scope.anglers);
-
 	$scope.search = {};
 
 	$scope.search.species = 'Blacktip';
 
 	$scope.orderByWeight = "-weight";
-
-}]);
-
-//== Most Sharks
-btcApp.controller('mostSharks', ['$scope', '$firebase', function($scope, $firebase) {
-
-	/*== Firebase ==*/
-	// $scope.anglers = $firebase(new Firebase('https://btc-fullsail.firebaseio.com/entries'));
-
-	console.log($scope.anglers);
 
 }]);
 
