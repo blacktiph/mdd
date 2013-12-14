@@ -8,16 +8,19 @@
 <h2>Submissions</h2>
 <br />
 
-<form name="entryForm" data-ng-submit="addEntry(entryForm)" novalidate>
+<form action="http://localhost:8888/MDD/app/php/upload.php" method="post" enctype="multipart/form-data" name="entryForm" data-ng-submit="addEntry(entryForm)" novalidate>
+
+	<input type="hidden" name="pizzaboy" value="{{newEntry.name}}" />
 
 	<h4>Angler Information</h4>
 	<div class="form-group">
-		<input type="text" class="form-control" name="anglerName" id="anglerName" data-ng-model="newEntry.name" placeholder="Angler Name" max-length="50" required />
+		<input type="text" name="anglerName" class="form-control" data-ng-model="newEntry.name" placeholder="Angler Name" max-length="50" required />
+		<div class="errorMsg" ng-show="entryForm.anglerName.$error.required && entryForm.anglerName.$dirty">*Required</div>
 	</div>
 
 	<div class="form-group">
 		<label for="species">Shark Species</label>
-		<select data-ng-model="newEntry.species" class="form-control" required>
+		<select data-ng-model="newEntry.species" class="form-control" ng-required="true">
 			<option>Blacknose</option>
 			<option selected>Blacktip</option>
 			<option>Bull</option>
@@ -37,7 +40,7 @@
 	<h4>Measurements</h4>
 
 	<div class="form-group">
-		<input data-ng-model="newEntry.overallLength" type="number" class="form-control" id="overall" placeholder="Overall Length" required />
+		<input data-ng-model="newEntry.overallLength" type="number" class="form-control" id="overall" placeholder="Overall Length" max-length="10" required />
 	</div>
 
 	<div class="form-group">
@@ -53,8 +56,10 @@
 
 	<div class="form-group">
 		<label for="fighting_photo">Angler Fighting Fish</label>
-		<input type="file" id="fighting_photo" ng-file-select="onFileSelect($files)" required />
+		<input type="file" name="fighting_file" id="fighting_photo" ng-file-select="onFileSelect($files)" required />
 	</div>
+	<div class="errorMsg">{{errorMsg}}</div>
+
 	<div class="form-group">
 		<h6>Preview:</h6>
    		<i ng-hide="imageSrc[0]">No image choosed</i>

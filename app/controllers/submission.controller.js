@@ -1,7 +1,9 @@
 //== Submission Page
-btcApp.controller('submission', ['$scope', '$firebase', '$location', 'fileReader', function($scope, $firebase, $location, fileReader) {
+btcApp.controller('submission', ['$scope', '$firebase', '$location', 'fileReader', '$routeParams', function($scope, $firebase, $location, fileReader, $routeParams) {
 
 	$scope.newEntry = {};
+
+	$scope.errorMsg = $routeParams.msg;
 
 	//Set default value of dropdown list
 	$scope.newEntry.species = "Blacktip";

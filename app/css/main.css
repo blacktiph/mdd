@@ -6,3 +6,9 @@
 	margin-top: 40px;
 	margin-bottom: 40px;
 }
+
+.errorMsg {
+	color: #A94341;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
