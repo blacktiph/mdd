@@ -14,46 +14,43 @@ btcApp.controller("CoreCtrl", ["$scope","$firebase","$firebaseAuth","$location",
         // user.pizza = "yum";
         // $scope.users.$add(user);
 
-        // console.log(user);
+        console.log(user);
+
+        // pizza = 'submit';
 
         $scope.user = $firebase(new Firebase('https://btc-fullsail.firebaseio.com/users/'+user.id));
         $scope.user.$on("loaded", function(userLoaded) {
             if(userLoaded === null)
             {
-                var newUser = {
+                console.log('user is not in database');
+                userLoaded = {
                     //create specific data
                     authorized: false,
                     email: user.email,
-                    name: user.name,
+                    name: user.name
                 }
 
-                $scope.user.$set(newUser);
+                $scope.user.$set(userLoaded);
 
-                $location.path('/secure');
+                // $location.path('/secure');
             }
+
         });
 
-        // var userCount = $scope.users.length;
+         $scope.user.$on("change", function(userLoaded) {
+            console.log('$scope.user.authorized',$scope.user.authorized,$scope.user);
+            if(!$scope.user.authorized)
+            {
+                $location.path('/secure');
+            }
+            else {
+                console.log('user is in database');
+                $location.path("/submit");
+            }
 
-        // //create for loop to loop through $scope.users
-        // for (var i=0;i<userCount.;i++) {
+        });
 
-        //     //if user.id != scope.users[i].id, $add(user);
-        //     if(user.id != $scope.users[i].id){
-
-        //         //when adding user, remove the key that they used from $scope.keys 
-        //         //and add it to the user object before I do this $add(user)
-                
-
-        //         //add the user
-        //         $scope.addKeys = function(){
-
-        //             $scope.keys.$add($scope.keyValue);
-        //         };
-        //     }
-        // }
-
-        // $location.path('/submit');
+        // $location.path(pizza); 
     });
 
     $scope.$on("$firebaseAuth:logout", function(e,user){

@@ -11,7 +11,7 @@ btcApp.config(function($routeProvider){
 	$routeProvider.when('/secure',
 		{
 			controller: 'login',
-			// authRequired: false,
+			// authRequired: true,
 			templateUrl: 'views/secure.html'
 		});
 	$routeProvider.when('/submit',
