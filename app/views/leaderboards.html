@@ -1,37 +1,40 @@
 
-<!-- <a href="#/submit">Submit another Entry</a> -->
-<!-- <button ng-click="auth.$logout()" id="fb_logout" class="btn btn-warning pull-right">Log Out</button> -->
 
-<h3>Largest Shark</h3>
-<div class="table-responsive">
-	<table class="table table-condensed table-striped">
-		<tr>
-			<th>#</th>
-			<th>Angler - Species - Overall Length</th>
-		</tr>
-		<tr data-ng-repeat="anglerList in anglers | toArray | orderBy:orderByLength">
-			<td>{{$index+1}}.</td>
-			<td>{{anglerList.name}} - {{anglerList.species}} - {{anglerList.overallLength}}</td>
-			<!-- anglerList.overallLength -->
-		</tr>
-	</table>
-</div>
+<h2>Leaderboards</h2>
 
-<div class="leaderboard" ng-controller="blacktipLeaderBoard">
-	<h3>Largest Blacktip</h3>
+<div id="leaderboards">
+
 	<div class="table-responsive">
-		<table class="table table-condensed table-striped">
+		<table class="table table-condensed">
+			<caption><h3>Largest Shark</h3></caption>
 			<tr>
 				<th>#</th>
-				<th>Name</th>
-				<th>Weight</th>
+				<th>Angler - Species - Overall Length</th>
 			</tr>
-			<input class="removeFromDisplay" type="text" ng-model="search.species" value="blacktip" name="blacktip" />
-			<tr data-ng-repeat="anglerList in anglers | toArray | filter:search | orderBy:orderByWeight">
+			<tr data-ng-repeat="anglerList in anglers | toArray | orderBy:orderByLength">
 				<td>{{$index+1}}.</td>
-				<td>{{anglerList.name}}</td>
-				<td>{{anglerList.weight}}</td>
+				<td>{{anglerList.name}} - {{anglerList.species}} - {{anglerList.overallLength}}</td>
+				<!-- anglerList.overallLength -->
 			</tr>
 		</table>
+	</div>
+
+	<div class="leaderboard" ng-controller="blacktipLeaderBoard">
+		<div class="table-responsive">
+			<table class="table table-condensed">
+				<caption><h3>Largest Blacktip</h3></caption>
+				<tr>
+					<th>#</th>
+					<th>Name</th>
+					<th>Weight</th>
+				</tr>
+				<input class="removeFromDisplay" type="text" ng-model="search.species" value="blacktip" name="blacktip" />
+				<tr data-ng-repeat="anglerList in anglers | toArray | filter:search | orderBy:orderByWeight">
+					<td>{{$index+1}}.</td>
+					<td>{{anglerList.name}}</td>
+					<td>{{anglerList.weight}}</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 </div>

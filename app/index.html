@@ -24,17 +24,18 @@
 			<img id="brand_logo" src="images/logo.png" alt="Blacktip Challenge" />
 		</div>
 
-		<div id="mobile_dropdown"><i class="fa fa-bars"></i></div>
+		<div id="mobile_dropdown" ng-click="dropdown = !dropdown"><i class="fa fa-bars"></i></div>
 
-		<div id="navigation" class="hidden">
+
+	</header>
+
+		<div id="navigation" ng-show="dropdown">
 			<ul class="nav nav-stacked">
 				<li><a href="#/submit">Submissions</a></li>
 				<li><a href="#/leaderboards">Leaderboards</a></li>
 				<li ng-click="auth.$logout()" id="fb_logout"><a href="#">Log Out</a></li>
 			</ul>
 		</div>
-
-	</header>
 
 	
 
@@ -43,13 +44,11 @@
 		<!-- Views load through here... -->
 		<div ng-view=""></div>
 
-		<footer>
-			<p>Copyright &copy; 2013 - Joshua Jorgensen</p>
-		</footer>
-
 	</div>
 
-
+	<footer>
+		<p>Copyright &copy; 2013 - Joshua Jorgensen</p>
+	</footer>
 
 </body>
 
@@ -61,7 +60,7 @@
 
 <!-- Firebase -->
 <script src="https://cdn.firebase.com/v0/firebase.js"></script>
-<script src="https://cdn.firebase.com/libs/angularfire/0.5.0-rc1/angularfire.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/0.5.0/angularfire.js"></script>
 <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
 
 <!-- Controllers -->
@@ -73,8 +72,5 @@
 
 <!-- Upload -->
 <script src="js/upload.js"></script>
-
-<!-- Dropdown -->
-<script src="js/dropdown.js"></script>
 
 </html>

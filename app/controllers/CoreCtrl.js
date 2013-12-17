@@ -6,8 +6,18 @@ btcApp.controller("CoreCtrl", ["$scope","$firebase","$firebaseAuth","$location",
     // $scope.keys = $firebase(new Firebase($scope.firebaseURL+"/keys"));
     // $scope.users = $firebase(new Firebase($scope.firebaseURL+"/users"));
 
+    $scope.dropdown = false;
+
     var ref = new Firebase($scope.firebaseURL);
     $scope.auth = $firebaseAuth(ref, {path:'/'});
+
+    $scope.login = function()
+    {
+        $scope.auth.$login('facebook',{ scope: 'email' }).then(function(){
+             $location.path('/submit');
+        })
+        //
+    }
 
     $scope.$on("$firebaseAuth:login", function(e,user){
         // console.log('logged in');
@@ -42,10 +52,6 @@ btcApp.controller("CoreCtrl", ["$scope","$firebase","$firebaseAuth","$location",
 
             if(!$scope.user.authorized) {
                 $location.path('/secure');
-            }
-            else {
-                console.log('user is in database');
-                $location.path("/submit");
             }
 
         });

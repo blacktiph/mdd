@@ -24,11 +24,27 @@ h2 {
 	font-size: 34px;
 }
 
+h3{
+	font-family: 'mywebfont';
+	margin-top: 30px;
+	margin-bottom: 15px;
+}
+
+h3, h4 {
+	color: #3d4d4a;
+	text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+h4 {
+	font-family: 'mywebfont';
+	margin-bottom: 10px;
+}
+
 .home {
     /* Ensure the html element always takes up the full height of the browser window */
-    min-height:100%;
-	background:url('../images/login_bg.jpg') no-repeat center center;
-    background-size:cover;
+    /*min-height: 100%;*/
+	background: url('../images/login_bg.jpg') no-repeat center center;
+    background-size: cover;
 }
 
 .removeFromDisplay {
@@ -87,7 +103,7 @@ header {
 	overflow: hidden;
 	padding: 10px 0;
 	/*background: rgba(202, 189, 163, 0.8);*/
-	margin-bottom: 30px;
+	/*margin-bottom: 30px;*/
 	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 	background: -moz-linear-gradient(top,  rgba(202,189,163,0.8) 0%, rgba(183,171,148,0.8) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(202,189,163,0.8)), color-stop(100%,rgba(183,171,148,0.8)));
@@ -121,14 +137,17 @@ header {
 }
 
 #navigation{
-	/*position: relative;*/
+	/*position: absolute;
+	top: 71px;
+	width: 100%;*/
+	overflow: hidden;
 }
 
 .nav {
 	overflow: hidden;
-	position: absolute;
+	/*position: absolute;
 	top: 71px;
-	width: 100%;
+	width: 100%;*/
 	margin-bottom: 30px;
 	background: rgba(255, 255, 255, 0.6);
 }
@@ -138,10 +157,22 @@ header {
 	float: left;
 	display: block;
 	background: rgba(255, 255, 255, 0.6);
+	background: -moz-linear-gradient(top,  rgba(232,240,242,0.8) 0%, rgba(218,232,234,0.8) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(232,240,242,0.8)), color-stop(100%,rgba(218,232,234,0.8)));
+	background: -webkit-linear-gradient(top,  rgba(232,240,242,0.8) 0%,rgba(218,232,234,0.8) 100%);
+	background: -o-linear-gradient(top,  rgba(232,240,242,0.8) 0%,rgba(218,232,234,0.8) 100%);
+	background: -ms-linear-gradient(top,  rgba(232,240,242,0.8) 0%,rgba(218,232,234,0.8) 100%);
+	background: linear-gradient(to bottom,  rgba(232,240,242,0.8) 0%,rgba(218,232,234,0.8) 100%);
 }
 
 
 /*===== Login =====*/
+
+#login {
+	overflow: hidden;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
 
 #login button {
 	width: 100%;
@@ -152,6 +183,7 @@ header {
 
 #secure {
 	width: 100%;
+	margin-top: 30px;
 }
 
 #secure form {
@@ -175,13 +207,6 @@ header {
 	line-height: 0;
 }
 
-#submitForm h4 {
-	/*margin-top: 30px;*/
-	font-family: 'mywebfont';
-	margin-bottom: 10px;
-	/*background-color: lime;*/
-}
-
 #submitForm select {
 	margin-bottom: 0;
 }
@@ -201,9 +226,86 @@ input[id="girth"]{
 	margin-bottom: 0;
 }
 
-
 #preview_img {
 	max-width: 300px;
+}
+
+#submitForm button {
+	width: 100%;
+}
+
+
+/*===== Leaderboards =====*/
+
+.table-responsive {
+	margin-top: 30px;
+	border-color: rgba(255, 255, 255, 0.4);
+	border-bottom: none;
+}
+
+table {
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+caption {
+	/*padding-top: 1px;*/
+	background: -moz-linear-gradient(top,  rgba(163,195,201,0.8) 0%, rgba(146,175,181,0.8) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(163,195,201,0.8)), color-stop(100%,rgba(146,175,181,0.8)));
+	background: -webkit-linear-gradient(top,  rgba(163,195,201,0.8) 0%,rgba(146,175,181,0.8) 100%);
+	background: -o-linear-gradient(top,  rgba(163,195,201,0.8) 0%,rgba(146,175,181,0.8) 100%);
+	background: -ms-linear-gradient(top,  rgba(163,195,201,0.8) 0%,rgba(146,175,181,0.8) 100%);
+	background: linear-gradient(to bottom,  rgba(163,195,201,0.8) 0%,rgba(146,175,181,0.8) 100%);
+	/*text-align: left;*/
+	/*padding-left: 10px;*/
+}
+
+caption h3 {
+	margin: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+tr:nth-child(1){
+	background: -moz-linear-gradient(top,  rgba(182,208,211,0.8) 0%, rgba(169,197,204,0.8) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(182,208,211,0.8)), color-stop(100%,rgba(169,197,204,0.8)));
+	background: -webkit-linear-gradient(top,  rgba(182,208,211,0.8) 0%,rgba(169,197,204,0.8) 100%);
+	background: -o-linear-gradient(top,  rgba(182,208,211,0.8) 0%,rgba(169,197,204,0.8) 100%);
+	background: -ms-linear-gradient(top,  rgba(182,208,211,0.8) 0%,rgba(169,197,204,0.8) 100%);
+	background: linear-gradient(to bottom,  rgba(182,208,211,0.8) 0%,rgba(169,197,204,0.8) 100%);
+	text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+tr{
+	background: -moz-linear-gradient(top,  rgba(213,233,237,0.8) 0%, rgba(199,216,219,0.8) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(213,233,237,0.8)), color-stop(100%,rgba(199,216,219,0.8)));
+	background: -webkit-linear-gradient(top,  rgba(213,233,237,0.8) 0%,rgba(199,216,219,0.8) 100%);
+	background: -o-linear-gradient(top,  rgba(213,233,237,0.8) 0%,rgba(199,216,219,0.8) 100%);
+	background: -ms-linear-gradient(top,  rgba(213,233,237,0.8) 0%,rgba(199,216,219,0.8) 100%);
+	background: linear-gradient(to bottom,  rgba(213,233,237,0.8) 0%,rgba(199,216,219,0.8) 100%);
+}
+
+#leaderboards td {
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	padding: 10px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.025);
+}
+
+#leaderboards td:nth-child(2n+2),
+#leaderboards td:nth-child(2n+3) {
+	/*background-color: red;*/
+	padding-left: 5px;
+}
+
+
+#leaderboards th {
+	border-top: none;
+	/*border-color: lime;*/
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#leaderboards th:nth-child(1){
+	padding-left: 10px;
 }
 
 
@@ -211,8 +313,22 @@ input[id="girth"]{
 
 footer {
 	text-align: center;
-	color: #efefef;
-	text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+	color: rgba(255, 255, 255, 0.8);
+	height: 40px;
+	line-height: 40px;
+	/*position: absolute;*/
+	margin-top: 30px;
+	bottom: 0;
+	width: 100%;
+	font-size: 12px;
+	font-weight: bold;
+	text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+	background: -moz-linear-gradient(top,  rgba(123,148,153,0.8) 0%, rgba(102,121,124,0.8) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(123,148,153,0.8)), color-stop(100%,rgba(102,121,124,0.8)));
+	background: -webkit-linear-gradient(top,  rgba(123,148,153,0.8) 0%,rgba(102,121,124,0.8) 100%);
+	background: -o-linear-gradient(top,  rgba(123,148,153,0.8) 0%,rgba(102,121,124,0.8) 100%);
+	background: -ms-linear-gradient(top,  rgba(123,148,153,0.8) 0%,rgba(102,121,124,0.8) 100%);
+	background: linear-gradient(to bottom,  rgba(123,148,153,0.8) 0%,rgba(102,121,124,0.8) 100%);
 }
 
 

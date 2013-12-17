@@ -1,66 +1,37 @@
-(function(){ 
+// (function(){ 
 
-	var dropdown = document.querySelector('#mobile_dropdown');
-	var closeDropdown = document.querySelector('#close_dropdown');
-	var nav = document.querySelector('#navigation');
+// 	var dropdown = document.querySelector('#mobile_dropdown');
+// 	var closeDropdown = document.querySelector('#close_dropdown');
+// 	var nav = document.querySelector('#navigation');
 
+// 	if(document.querySelector('#close_dropdown')){
+// 		console.log('hello');
+// 	}
 
+// 	dropdown.onclick = function(e){
+// 		// console.log('awesome dropdown menu');
 
-	// function openNav()
-	// {
-	//     dropdown.setAttribute('id', "close_dropdown");
+// 		dropdown.setAttribute("id", "close_dropdown");
 
-	//     nav.setAttribute('class', "");
+// 		nav.setAttribute("class", "");
 
-	// 	e.preventDefault();
-	// 	return false;
-	// }
+// 		console.log(dropdown);
 
-	// function closeNav()
-	// {
-	//     dropdown.setAttribute('id', "mobile_dropdown");
+// 		e.preventDefault();
+// 		return false;
+// 	}
 
-	//     nav.setAttribute('class', "hidden");
+// 	closeDropdown.onclick = function(e){
+// 		// console.log('awesome dropdown menu');
 
-	// 	e.preventDefault();
-	// 	return false;
-	// }
+// 		dropdown.setAttribute("id", "mobile_dropdown");
 
-	// console.log(window);
+// 	    nav.setAttribute("class", "hidden");
 
-	// var dropdown = document.querySelector('#mobile_dropdown');
-	// var nav = document.querySelector('#navigation');
+// 	    console.log(dropdown);
 
-	// // console.log(dropdown);
+// 		e.preventDefault();
+// 		return false;
+// 	}
 
-	if(document.querySelector('#close_dropdown')){
-		console.log('hello');
-	}
-
-	dropdown.onclick = function(e){
-		// console.log('awesome dropdown menu');
-
-		dropdown.setAttribute("id", "close_dropdown");
-
-		nav.setAttribute("class", "");
-
-		console.log(dropdown);
-
-		e.preventDefault();
-		return false;
-	}
-
-	closeDropdown.onclick = function(e){
-		// console.log('awesome dropdown menu');
-
-		dropdown.setAttribute("id", "mobile_dropdown");
-
-	    nav.setAttribute("class", "hidden");
-
-	    console.log(dropdown);
-
-		e.preventDefault();
-		return false;
-	}
-
-})();
+// })();

@@ -20,7 +20,7 @@ btcApp.controller('submission', ['$scope', '$firebase', '$location', 'fileReader
 				
 				// if not, make an array named $scope.imageSrc
 				$scope.imageSrc = [];
-				console.log('it is an object');
+				// console.log('it is an object');
 			}
 			
 			//push result into array
@@ -34,6 +34,8 @@ btcApp.controller('submission', ['$scope', '$firebase', '$location', 'fileReader
 
 		$location.path('/leaderboards');
 	};
+
+	console.log($scope);
 
 }]);
 
