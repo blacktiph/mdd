@@ -173,7 +173,7 @@ header {
 }
 
 #login button {
-	width: 100%;
+	width: 100%; /* Make button width of mobile browser */
 }
 
 
