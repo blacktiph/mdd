@@ -7,7 +7,7 @@ btcApp.controller("CoreCtrl", ["$scope","$firebase","$firebaseAuth","$location",
     // $scope.users = $firebase(new Firebase($scope.firebaseURL+"/users"));
 
     var ref = new Firebase($scope.firebaseURL);
-     $scope.auth = $firebaseAuth(ref, {path:'/'});
+    $scope.auth = $firebaseAuth(ref, {path:'/'});
 
     $scope.$on("$firebaseAuth:login", function(e,user){
         // console.log('logged in');
@@ -22,7 +22,7 @@ btcApp.controller("CoreCtrl", ["$scope","$firebase","$firebaseAuth","$location",
         $scope.user.$on("loaded", function(userLoaded) {
             if(userLoaded === null)
             {
-                console.log('user is not in database');
+                // console.log('user is not in database');
                 userLoaded = {
                     //create specific data
                     authorized: false,
@@ -37,10 +37,10 @@ btcApp.controller("CoreCtrl", ["$scope","$firebase","$firebaseAuth","$location",
 
         });
 
-         $scope.user.$on("change", function(userLoaded) {
-            console.log('$scope.user.authorized',$scope.user.authorized,$scope.user);
-            if(!$scope.user.authorized)
-            {
+        $scope.user.$on("change", function(userLoaded) {
+            // console.log('$scope.user.authorized',$scope.user.authorized,$scope.user);
+
+            if(!$scope.user.authorized) {
                 $location.path('/secure');
             }
             else {
@@ -50,7 +50,7 @@ btcApp.controller("CoreCtrl", ["$scope","$firebase","$firebaseAuth","$location",
 
         });
 
-        // $location.path(pizza); 
+        // $location.path("/submit");
     });
 
     $scope.$on("$firebaseAuth:logout", function(e,user){

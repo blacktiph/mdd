@@ -6,22 +6,50 @@
 	
 	<title>Blacktip Challenge Submissions</title>
 	<meta charset="utf-8"/>
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
+	<meta name="description" content="Submission app for the Blacktip Challenge" />
+	<meta name="keywords" content="blacktip, challenge, submit" />
+
+	<!-- Google Web Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC' rel='stylesheet' type='text/css'>
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/font-awesome.css" />
 	<link rel="stylesheet" href="css/main.css" />
 </head>
 
-<body>
+<body class="home">
+	<header>
+		<div class="row text-center">
+			<img id="brand_logo" src="images/logo.png" alt="Blacktip Challenge" />
+		</div>
+
+		<div id="mobile_dropdown"><i class="fa fa-bars"></i></div>
+
+		<div id="navigation" class="hidden">
+			<ul class="nav nav-stacked">
+				<li><a href="#/submit">Submissions</a></li>
+				<li><a href="#/leaderboards">Leaderboards</a></li>
+				<li ng-click="auth.$logout()" id="fb_logout"><a href="#">Log Out</a></li>
+			</ul>
+		</div>
+
+	</header>
+
+	
 
 	<div class="container" ng-controller="CoreCtrl">
 		
 		<!-- Views load through here... -->
 		<div ng-view=""></div>
 
+		<footer>
+			<p>Copyright &copy; 2013 - Joshua Jorgensen</p>
+		</footer>
+
 	</div>
+
+
 
 </body>
 
@@ -45,5 +73,8 @@
 
 <!-- Upload -->
 <script src="js/upload.js"></script>
+
+<!-- Dropdown -->
+<script src="js/dropdown.js"></script>
 
 </html>

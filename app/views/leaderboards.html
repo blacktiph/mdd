@@ -1,22 +1,18 @@
-<br />
-<a href="#/submit">Submit another Entry</a>
+
+<!-- <a href="#/submit">Submit another Entry</a> -->
+<!-- <button ng-click="auth.$logout()" id="fb_logout" class="btn btn-warning pull-right">Log Out</button> -->
 
 <h3>Largest Shark</h3>
 <div class="table-responsive">
 	<table class="table table-condensed table-striped">
 		<tr>
-			<th>Position</th>
-			<th>Name</th>
-			<th>Species</th>
-			<th>Fork Length</th>
-			<th>Overall Length</th>
+			<th>#</th>
+			<th>Angler - Species - Overall Length</th>
 		</tr>
 		<tr data-ng-repeat="anglerList in anglers | toArray | orderBy:orderByLength">
-			<td>{{ $index+1 }}.</td>
-			<td>{{ anglerList.name }}</td>
-			<td>{{ anglerList.species }}</td>
-			<td>{{ anglerList.forkLength }}</td>
-			<td>{{ anglerList.overallLength }}</td>
+			<td>{{$index+1}}.</td>
+			<td>{{anglerList.name}} - {{anglerList.species}} - {{anglerList.overallLength}}</td>
+			<!-- anglerList.overallLength -->
 		</tr>
 	</table>
 </div>
@@ -26,21 +22,15 @@
 	<div class="table-responsive">
 		<table class="table table-condensed table-striped">
 			<tr>
-				<th>Position</th>
+				<th>#</th>
 				<th>Name</th>
-				<th>Overall Length</th>
-				<th>Fork Length</th>
-				<th>Girth</th>
-				<th>Estimated Weight</th>
+				<th>Weight</th>
 			</tr>
 			<input class="removeFromDisplay" type="text" ng-model="search.species" value="blacktip" name="blacktip" />
 			<tr data-ng-repeat="anglerList in anglers | toArray | filter:search | orderBy:orderByWeight">
-				<td>{{ $index+1 }}.</td>
-				<td>{{ anglerList.name }}</td>
-				<td>{{ anglerList.overallLength }}</td>
-				<td>{{ anglerList.forkLength }}</td>
-				<td>{{ anglerList.girth }}</td>
-				<td>{{ anglerList.weight }}</td>
+				<td>{{$index+1}}.</td>
+				<td>{{anglerList.name}}</td>
+				<td>{{anglerList.weight}}</td>
 			</tr>
 		</table>
 	</div>

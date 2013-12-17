@@ -29,8 +29,6 @@ btcApp.controller('submission', ['$scope', '$firebase', '$location', 'fileReader
     };
 
 	$scope.addEntry = function(){
-		validate($scope);
-
 		$scope.newEntry.weight = ($scope.newEntry.girth * $scope.newEntry.girth * $scope.newEntry.forkLength)/800;
 		$scope.anglers.$add($scope.newEntry);
 
@@ -51,11 +49,3 @@ btcApp.directive('ngFileSelect', function(){
 	};
 
 });
-
-var validate = function($scope){
-	// console.log('validate form function');
-	// console.log($scope);
-
-	var nameAndTeam = document.querySelector('#anglerName');
-	// console.log(nameAndTeam);
-}

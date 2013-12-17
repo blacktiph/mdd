@@ -1,15 +1,6 @@
-<div class="panel panel-primary">
-
-	<div class="panel-heading">
-		<h1>Security Checkpoint</h1>
-	</div>
-
-	<div class="panel-body">
-		<form>
-			<label>Security Code</label>
-			<input ng-model="keyValue" id="security" type="text" />
-			<button id="securityBtn" class="btn btn-primary" ng-click="checkKeys()">Check Code</button>
-		</form>
-	</div>
-	
+<div id="secure">
+	<form>
+		<input ng-model="keyValue" id="security" type="text" placeholder="Security Code" />
+		<button id="securityBtn" class="btn btn-primary" ng-click="checkKeys()">Validate</button>
+	</form>
 </div>
