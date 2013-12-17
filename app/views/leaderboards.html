@@ -1,9 +1,6 @@
-
-
 <h2>Leaderboards</h2>
 
 <div id="leaderboards">
-
 	<div class="table-responsive">
 		<table class="table table-condensed">
 			<caption><h3>Largest Shark</h3></caption>
@@ -14,7 +11,6 @@
 			<tr data-ng-repeat="anglerList in anglers | toArray | orderBy:orderByLength">
 				<td>{{$index+1}}.</td>
 				<td>{{anglerList.name}} - {{anglerList.species}} - {{anglerList.overallLength}}</td>
-				<!-- anglerList.overallLength -->
 			</tr>
 		</table>
 	</div>
