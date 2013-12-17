@@ -1,4 +1,3 @@
-
 <h2>Submissions</h2>
 
 <form id="submitForm" action="http://localhost:8888/MDD/app/php/upload.php" method="post" enctype="multipart/form-data" name="entryForm" data-ng-submit="addEntry(entryForm)" novalidate>
@@ -32,18 +31,21 @@
 	<div class="form-group">
 		<input data-ng-model="newEntry.overallLength" type="number" class="form-control" name="overallLength" id="overall" placeholder="Overall Length" ng-pattern="/^[-+]?\d+(\.\d+)?$/" max-length="10" required />
 
+		<!-- Error Messages for Overall Length -->
 		<div class="errorMsg" ng-show="entryForm.overallLength.$error.required && entryForm.overallLength.$dirty">Required</div>
 		<div class="errorMsg" ng-show="entryForm.overallLength.$error.pattern">Must contain only numbers (whole or decimal)!</div>
 
 
 		<input data-ng-model="newEntry.forkLength" name="forkLength" type="number" class="form-control" id="fork" placeholder="Fork Length" ng-pattern="/^[-+]?\d+(\.\d+)?$/" max-length="10" required />
 
+		<!-- Error Messages for Fork Length -->
 		<div class="errorMsg" ng-show="entryForm.forkLength.$error.required && entryForm.forkLength.$dirty">Required</div>
 		<div class="errorMsg" ng-show="entryForm.forkLength.$error.pattern">Must contain only numbers (whole or decimal)!</div>
 
 
 		<input data-ng-model="newEntry.girth" type="number" name="girth" class="form-control" id="girth" placeholder="Girth (Blacktip sharks only)" ng-pattern="/^[-+]?\d+(\.\d+)?$/" max-length="10" required />
 
+		<!-- Error Messages for Girth -->
 		<div class="errorMsg" ng-show="entryForm.girth.$error.required && entryForm.girth.$dirty">Required</div>
 		<div class="errorMsg" ng-show="entryForm.girth.$error.pattern">Must contain only numbers (whole or decimal)!</div>
 	</div>
