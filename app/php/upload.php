@@ -1,6 +1,6 @@
 <?php
 
-function killerFishSticks(){
+function imgUploadHelper(){
 
 	//Array for errors
 	$returnObject = [];
@@ -19,10 +19,6 @@ function killerFishSticks(){
 	$fileName = $_FILES["fighting_file"]["name"];
 	$tempFile = $_FILES["fighting_file"]["tmp_name"];
 
-	//Create for loop to "loop" throug $_FILES. You are currently just selecting the fighting_file. 
-
-	//Put upload code in the loop to access all files
-
 	//== File Path
 	$filePath = "/Applications/MAMP/htdocs/MDD/app/uploads/";
 
@@ -40,7 +36,6 @@ function killerFishSticks(){
 
 	//TESTING purposes - set time
 	$cameraUnixTime = 1391058100;
-
 
 	//== File type, time, and size Logic
 	if($fileType == "image/jpeg" && $fileSize < 20971520 && in_array($info_upload_exts, $info_file_exts)){
@@ -78,13 +73,9 @@ function killerFishSticks(){
 	}
 }
 
-$data = killerFishSticks();
+$data = imgUploadHelper();
 
 //if there are errors, return to submit page.
 header('location:../index.html#/submit/file/error/' . $data['error']); 
-
-//else go to leaderboard view
-
-
 
 ?>
