@@ -25,19 +25,15 @@
 		</div>
 
 		<div id="mobile_dropdown" ng-click="dropdown = !dropdown"><i class="fa fa-bars"></i></div>
-
-
 	</header>
 
-		<div id="navigation" ng-show="dropdown">
-			<ul class="nav nav-stacked">
-				<li><a href="#/submit">Submissions</a></li>
-				<li><a href="#/leaderboards">Leaderboards</a></li>
-				<li ng-click="auth.$logout()" id="fb_logout"><a href="#">Log Out</a></li>
-			</ul>
-		</div>
-
-	
+	<div id="navigation" ng-show="dropdown">
+		<ul class="nav nav-stacked">
+			<li><a href="#/submit" ng-click="dropdown = false">Submissions</a></li>
+			<li><a href="#/leaderboards" ng-click="dropdown = false">Leaderboards</a></li>
+			<li ng-click="auth.$logout(); dropdown = false;" id="fb_logout"><a href="#">Log Out</a></li>
+		</ul>
+	</div>
 
 	<div class="container" ng-controller="CoreCtrl">
 		
@@ -45,10 +41,6 @@
 		<div ng-view=""></div>
 
 	</div>
-
-	<footer>
-		<p>Copyright &copy; 2013 - Joshua Jorgensen</p>
-	</footer>
 
 </body>
 

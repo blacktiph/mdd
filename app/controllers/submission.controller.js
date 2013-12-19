@@ -8,6 +8,8 @@ btcApp.controller('submission', ['$scope', '$firebase', '$location', 'fileReader
 	//Set default value of dropdown list
 	$scope.newEntry.species = "Blacktip";
 
+	//Reset Dropdown
+	$scope.dropdown = false;
 
 	/*== Image Uploader ==*/
 	$scope.getFile = function () {

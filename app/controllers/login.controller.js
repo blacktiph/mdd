@@ -6,6 +6,9 @@ btcApp.controller("login", ["$scope","$firebase", "$location", function($scope, 
 
 	$scope.keyValue = '';
 
+    //Reset Dropdown
+    $scope.dropdown = false;
+
 	//Disable FB login button
     $scope.secure = false;
 

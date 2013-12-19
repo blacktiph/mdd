@@ -30,7 +30,7 @@ h3{
 }
 
 h3, h4 {
-	color: #3d4d4a;
+	color: #1c2120;
 	text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
@@ -40,9 +40,11 @@ h4 {
 }
 
 .home {
-    /* Ensure the html element always takes up the full height of the browser window */
     min-height: 100%;
-	background: url('../images/login_bg.jpg') no-repeat center center;
+	background: url('../images/bg_img.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
 }
 
@@ -78,19 +80,16 @@ h4 {
 	box-shadow:         0 1px 2px rgba(255, 255, 255, 0.3);
 }
 
-.container select {
+.container select,
+.container input {
 	margin-bottom: 20px;
 }
 
 .container input {
 	width: 100%;
 	float: left;
-	margin-bottom: 20px;
 	border: none;
 	height: 40px;
-  	font-size: 16px;
-  	background-color: #e6f0f2;
-  	background-color: rgba(235, 240, 245, 0.9);
 }
 
 
@@ -100,8 +99,6 @@ header {
 	height: 70px;
 	overflow: hidden;
 	padding: 10px 0;
-	/*background: rgba(202, 189, 163, 0.8);*/
-	/*margin-bottom: 30px;*/
 	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 	background: -moz-linear-gradient(top,  rgba(202,189,163,0.8) 0%, rgba(183,171,148,0.8) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(202,189,163,0.8)), color-stop(100%,rgba(183,171,148,0.8)));
@@ -112,7 +109,6 @@ header {
 }
 
 #brand_logo {
-	/*max-width: 100%;*/
 	height: 50px;
 }
 
@@ -135,34 +131,39 @@ header {
 }
 
 #navigation{
-	/*position: absolute;
-	top: 71px;
-	width: 100%;*/
 	overflow: hidden;
+	-webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow:    0px 3px 5px rgba(0, 0, 0, 0.4);
+	box-shadow:         0px 3px 5px rgba(0, 0, 0, 0.4);
 }
 
 .nav {
 	overflow: hidden;
-	/*position: absolute;
-	top: 71px;
-	width: 100%;*/
-	margin-bottom: 30px;
-	background: rgba(255, 255, 255, 0.6);
+	background: #bcb9ad;
 }
 
 .nav li {
 	width: 100%;
 	float: left;
 	display: block;
-	background: rgba(255, 255, 255, 0.6);
-	background: -moz-linear-gradient(top,  rgba(232,240,242,0.8) 0%, rgba(218,232,234,0.8) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(232,240,242,0.8)), color-stop(100%,rgba(218,232,234,0.8)));
-	background: -webkit-linear-gradient(top,  rgba(232,240,242,0.8) 0%,rgba(218,232,234,0.8) 100%);
-	background: -o-linear-gradient(top,  rgba(232,240,242,0.8) 0%,rgba(218,232,234,0.8) 100%);
-	background: -ms-linear-gradient(top,  rgba(232,240,242,0.8) 0%,rgba(218,232,234,0.8) 100%);
-	background: linear-gradient(to bottom,  rgba(232,240,242,0.8) 0%,rgba(218,232,234,0.8) 100%);
+	background: #a19d89;
+	font-size: 16px;
+	text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.4);
 }
 
+.nav-stacked>li+li {
+	margin-top: 1px;
+}
+
+#navigation a:link,
+#navigation a:visited {
+	color: #444;
+}
+
+#navigation a:hover,
+#navigation a:active {
+	color: #333;
+}
 
 /*===== Login =====*/
 
@@ -173,7 +174,7 @@ header {
 }
 
 #login button {
-	width: 100%; /* Make button width of mobile browser */
+	width: 100%;
 }
 
 
@@ -205,16 +206,25 @@ header {
 	line-height: 0;
 }
 
+#submitForm h4 {
+	clear: left;
+}
+
 #submitForm select {
 	margin-bottom: 0;
 }
 
-.form-group {
+.form-group,
+.img_prev {
 	margin-bottom: 30px;
-	overflow: hidden;
+	display: block;
+	float: left;
+	clear: left;
+	width: 100%;
+	position: relative;
 }
 
-.form-group:nth-child(1){
+#submitForm .form-group:nth-child(1){
 	margin-bottom: 0;
 }
 
@@ -228,6 +238,22 @@ input[id="girth"]{
 
 #submitForm button {
 	width: 100%;
+}
+
+#submitForm .errorMsg {
+	font-size: 16px;
+	line-height: 5px;
+	margin-bottom: 30px;
+	display: block;
+	color: #b33838;
+}
+
+#submitForm .errorMsgSucks {
+	color: #b33838;
+	font-size: 16px;
+	float: left;
+	clear: both;
+	margin-top: 10px;
 }
 
 
@@ -288,10 +314,8 @@ tr{
 	padding-left: 5px;
 }
 
-
 #leaderboards th {
 	border-top: none;
-	/*border-color: lime;*/
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
@@ -308,8 +332,6 @@ footer {
 	color: rgba(255, 255, 255, 0.8);
 	height: 40px;
 	line-height: 40px;
-	/*position: absolute;*/
-	margin-top: 30px;
 	bottom: 0;
 	width: 100%;
 	font-size: 12px;
@@ -340,4 +362,17 @@ footer {
 
 :-ms-input-placeholder {  
    color: rgba(0, 0, 0, 0.3);  
+}
+
+@media all and (-webkit-min-device-pixel-ratio : 1.5) {
+    .home {
+		/*background: url('../images/bg_img.jpg') no-repeat center center fixed;*/
+		position:fixed;
+	    top:0;
+	    left:0;
+	    width:100%;
+	    height:100%;
+	    background: url('../images/bg_img.jpg') 0 0 no-repeat fixed !important;
+	    background-size:contain;
+	}
 }

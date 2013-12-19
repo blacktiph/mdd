@@ -6,8 +6,6 @@ btcApp.controller("CoreCtrl", ["$scope","$firebase","$firebaseAuth","$location",
     // $scope.keys = $firebase(new Firebase($scope.firebaseURL+"/keys"));
     // $scope.users = $firebase(new Firebase($scope.firebaseURL+"/users"));
 
-    $scope.dropdown = false;
-
     var ref = new Firebase($scope.firebaseURL);
     $scope.auth = $firebaseAuth(ref, {path:'/'});
 

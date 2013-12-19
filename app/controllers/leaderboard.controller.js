@@ -3,6 +3,9 @@ btcApp.controller('leaderboard', ['$scope', '$firebase', function($scope, $fireb
 
 	$scope.orderByLength = "-overallLength";
 
+	//Reset Dropdown
+    $scope.dropdown = false;
+
 }]);
 
 //== Largest Blacktip
