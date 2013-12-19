@@ -19,8 +19,8 @@ function imgUploadHelper(){
 	$fileName = $_FILES["fighting_file"]["name"];
 	$tempFile = $_FILES["fighting_file"]["tmp_name"];
 
-	//== File Path
-	$filePath = "/Applications/MAMP/htdocs/MDD/app/uploads/";
+	//== File Path (change this path to make it work)
+	$filePath = "../uploads";
 
 	//== Image Info
 	$info_file_exts = array("jpg", "JPG", "jpeg", "JPEG");
