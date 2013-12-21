@@ -31,13 +31,24 @@ btcApp.controller('submission', ['$scope', '$firebase', '$location', 'fileReader
     };
 
 	$scope.addEntry = function(){
-		$scope.newEntry.weight = ($scope.newEntry.girth * $scope.newEntry.girth * $scope.newEntry.forkLength)/800;
+		//Convert Overall Length to a number
+		$scope.newEntry.overallLength = $scope.newEntry.overallLength *1;
+
+		//Convert Fork Length to a number
+		$scope.newEntry.forkLength = $scope.newEntry.forkLength *1;
+
+		//Convert Girth to a number
+		$scope.newEntry.girth = $scope.newEntry.girth *1;
+
+		//Create estimated weight
+		if($scope.newEntry.species == "Blacktip"){
+			$scope.newEntry.weight = ($scope.newEntry.girth * $scope.newEntry.girth * $scope.newEntry.forkLength)/800;
+		}
+		
 		$scope.anglers.$add($scope.newEntry);
 
-		$location.path('/leaderboards');
+		$location.path('/success');
 	};
-
-	console.log($scope);
 
 }]);
 

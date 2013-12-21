@@ -3,34 +3,25 @@ btcApp.controller("CoreCtrl", ["$scope","$firebase","$firebaseAuth","$location",
     $scope.firebaseURL = "https://btc-fullsail.firebaseio.com";
 
     $scope.anglers = $firebase(new Firebase($scope.firebaseURL+"/entries"));
-    // $scope.keys = $firebase(new Firebase($scope.firebaseURL+"/keys"));
-    // $scope.users = $firebase(new Firebase($scope.firebaseURL+"/users"));
 
     var ref = new Firebase($scope.firebaseURL);
     $scope.auth = $firebaseAuth(ref, {path:'/'});
 
+    //Login function call
     $scope.login = function()
     {
         $scope.auth.$login('facebook',{ scope: 'email' }).then(function(){
              $location.path('/submit');
         })
-        //
     }
 
+    //Firebase Authentication
     $scope.$on("$firebaseAuth:login", function(e,user){
-        // console.log('logged in');
-        // user.pizza = "yum";
-        // $scope.users.$add(user);
-
-        console.log(user);
-
-        // pizza = 'submit';
 
         $scope.user = $firebase(new Firebase('https://btc-fullsail.firebaseio.com/users/'+user.id));
         $scope.user.$on("loaded", function(userLoaded) {
             if(userLoaded === null)
             {
-                // console.log('user is not in database');
                 userLoaded = {
                     //create specific data
                     authorized: false,
@@ -39,26 +30,21 @@ btcApp.controller("CoreCtrl", ["$scope","$firebase","$firebaseAuth","$location",
                 }
 
                 $scope.user.$set(userLoaded);
-
-                // $location.path('/secure');
             }
-
         });
 
+        // On Change
         $scope.user.$on("change", function(userLoaded) {
-            // console.log('$scope.user.authorized',$scope.user.authorized,$scope.user);
 
             if(!$scope.user.authorized) {
                 $location.path('/secure');
             }
 
         });
-
-        // $location.path("/submit");
     });
 
+    //Log Out
     $scope.$on("$firebaseAuth:logout", function(e,user){
-        console.log('logged out');
         $location.path('/');
 
     });

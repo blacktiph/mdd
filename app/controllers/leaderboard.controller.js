@@ -1,10 +1,20 @@
 //== Largest Shark
-btcApp.controller('leaderboard', ['$scope', '$firebase', function($scope, $firebase) {
+btcApp.controller('leaderboard', ['$scope', '$location', '$firebase', function($scope, $location, $firebase) {
 
 	$scope.orderByLength = "-overallLength";
 
 	//Reset Dropdown
     $scope.dropdown = false;
+
+    //Change location to submit for success page
+    $scope.addMoreSubmissions = function(){
+    	$location.path('/submit');
+    };
+
+     //Change location to leaderboards for success page
+    $scope.checkOutLeaders = function(){
+    	$location.path('/leaderboards');
+    };
 
 }]);
 

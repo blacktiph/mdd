@@ -8,35 +8,33 @@ btcApp.config(function($routeProvider){
 			authRequired: false,
 			templateUrl: 'views/login.html'
 		});
+	//Secure Page
 	$routeProvider.when('/secure',
 		{
 			controller: 'login',
 			authRequired: true,
 			templateUrl: 'views/secure.html'
 		});
+	//Submissions Page
 	$routeProvider.when('/submit',
 		{
 			controller: 'submission',
 			authRequired: true,
 			templateUrl: 'views/submit.html'
 		});
+	//When Submissions if successful
+	$routeProvider.when('/success',
+		{
+			controller: 'leaderboard',
+			authRequired: true,
+			templateUrl: 'views/success.html'
+		});
+	//Leaderboards page
 	$routeProvider.when('/leaderboards',
 		{
 			controller: 'leaderboard',
 			authRequired: true,
 			templateUrl: 'views/leaderboards.html'
-		});
-	$routeProvider.when('/submit/file/success',
-		{
-			controller: 'submission',
-			authRequired: true,
-			templateUrl: 'views/submit.html'
-		});
-	$routeProvider.when('/submit/file/error/:msg',
-		{
-			controller: 'submission',
-			authRequired: true,
-			templateUrl: 'views/submit.html'
 		});
 	$routeProvider.otherwise({redirectTo: '/'});
 });

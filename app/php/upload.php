@@ -75,7 +75,6 @@ function imgUploadHelper(){
 
 $data = imgUploadHelper();
 
-//if there are errors, return to submit page.
-header('location:../index.html#/submit/file/error/' . $data['error']); 
+header('location:../index.html#/success'); 
 
 ?>
